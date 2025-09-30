@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../minor project prototype/disaster-dashboard"
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"CG.C": "cpp"
+		},
+		"liveServer.settings.multiRootWorkspaceName": "java",
+		"liveServer.settings.port": 5501
+	}
+}

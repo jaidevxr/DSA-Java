@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chotta.dev</title>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body {
+      font-family: 'JetBrains Mono', monospace;
+      background: radial-gradient(circle at top left, #0f0f0f, #000);
+      color:#eee; display:flex; flex-direction:column;
+      align-items:center; padding:40px 20px; overflow-x:hidden;
+    }
+    h1 {
+      font-size:3.5rem; color:#ff69b4; /* pink vibe */
+      margin-bottom:10px; animation: pop-in 1s ease;
+      text-shadow:2px 2px 10px #000;
+    }
+    p { font-size:1.2rem; margin-bottom:30px; color:#bbb;
+        animation: fade-in 1.5s ease; text-align:center; }
+    .terminal {
+      background:#111; padding:25px; border-radius:15px;
+      border:1px solid #444; width:90%; max-width:800px;
+      margin:20px 0; box-shadow:0 0 20px rgba(255,105,180,0.4);
+      animation: fade-in-up 1s ease;
+    }
+    code { color:#00ffea; font-weight:bold; }
+    .button-row { display:flex; flex-wrap:wrap; justify-content:center;
+      gap:20px; margin:30px 0; animation:fade-in 2s ease; }
+    button {
+      padding:15px 30px; background:#222; color:#eee;
+      border:1px solid #666; border-radius:12px; cursor:pointer;
+      font-size:1rem; transition: all 0.3s ease;
+    }
+    button:hover { background:#ff69b4; color:#000; border-color:#ff69b4; transform:scale(1.05);}
+    .footer { margin-top:60px; font-size:0.95rem; color:#666; text-align:center; animation:fade-in 3s ease;}
+    .dark-stats,.meme-zone {
+      background:#1c1c1c; border-left:5px solid #ff69b4; padding:25px;
+      margin-top:30px; width:90%; max-width:800px; border-radius:10px;
+      box-shadow:0 0 12px rgba(255,105,180,0.2); animation:fade-in-up 1.5s ease;
+    }
+    .dark-stats h3,.meme-zone h3 { margin-bottom:10px; color:#ff69b4; }
+    .dark-stats ul { list-style:none; color:#ccc; font-size:1rem; }
+    .dark-stats li::before { content:'💅 '; }
+    .meme-zone button {
+      background:#333; color:#ff69b4; padding:8px 15px; border:none;
+      border-radius:8px; cursor:pointer; margin:0 5px; transition:background-color 0.3s ease;
+    }
+    .meme-zone button:hover { background:#ff69b4; color:#222;}
+    #joke-container {
+      min-height:80px; font-size:1.1rem; color:#ddd; margin-top:15px;
+      padding:15px; background:#222; border-radius:12px;
+      box-shadow:0 0 10px #ff69b4a0; transition:opacity 0.5s ease;
+    }
+    @keyframes fade-in {from{opacity:0;}to{opacity:1;}}
+    @keyframes fade-in-up {from{opacity:0; transform:translateY(20px);}to{opacity:1; transform:translateY(0);}}
+    @keyframes pop-in {from{transform:scale(0.5);opacity:0;}to{transform:scale(1);opacity:1;}}
+  </style>
+</head>
+<body>
+
+  <div class="terminal">
+    <code>&gt; echo "Scanning pockets... Chotta already stole it 🏴‍☠️"</code>
+  </div>
+
+  <h1><i class="fas fa-mask"></i> Welcome to Chotta.dev</h1>
+  <p><em>Half thief, half meme, full-time gay icon 💖</em></p>
+
+  <div class="button-row">
+    <button>Steal my wallet</button>
+    <button>Steal my man</button>
+    <button>Steal my heart 💘</button>
+  </div>
+
+  <div class="terminal">
+    <p><strong>Profile:</strong> Harshit aka "Chotta"</p>
+    <p>Status: Wanted by police & also by 3 guys on Grindr.</p>
+    <p><em>Hover to expose... like his search history.</em></p>
+  </div>
+
+  <div class="dark-stats">
+    <h3>🌈 Chotta’s Heist Leaderboard</h3>
+    <ul>
+      <li>ATM – emptied faster than his closet.</li>
+      <li>Pizza – stole the last slice, called it "tax".</li>
+      <li>Hearts – boys keep missing them mysteriously.</li>
+      <li>WiFi – password cracked, just like his fashion sense.</li>
+      <li>Scooter petrol – gone faster than your dignity.</li>
+    </ul>
+  </div>
+
+  <div class="meme-zone">
+    <h3><i class="fas fa-image"></i> Gay Reddit Meme Zone</h3>
+    <p>Scroll for ✨ fabulous chaos ✨</p>
+    <div id="joke-container"></div>
+    <div style="margin-top:10px; text-align:center;">
+      <button id="prev-joke">&#8592; Prev</button>
+      <button id="next-joke">Next &#8594;</button>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <h2>404 Error</h2>
+    <p>This page doesn’t exist — just like Chotta’s straight phase.</p>
+    <p><em>Playing: "Call Me By Your Name" soundtrack 🎶</em></p>
+  </div>
+
+  <div class="footer">
+    Made with stolen CSS, stolen memes, and Harshit’s stolen dignity.<br>
+    [ Terms of Theft ] [ Privacy? He stole it ] [ Contact – he won’t reply ]
+  </div>
+
+  <script>
+    // Button responses
+    const buttons = document.querySelectorAll(".button-row button");
+    const responses = [
+      "Congrats, your wallet is now gay 🏳️‍🌈",
+      "Oops, your man just got boyfriend experience stolen 💅",
+      "Heart stolen successfully 💖, no returns!"
+    ];
+    buttons.forEach((btn, index) => {
+      btn.addEventListener("click", () => {
+        const toast = document.createElement("div");
+        toast.textContent = responses[index];
+        toast.style.position = "fixed";
+        toast.style.bottom = "20px";
+        toast.style.left = "50%";
+        toast.style.transform = "translateX(-50%)";
+        toast.style.background = "#ff69b4";
+        toast.style.color = "#000";
+        toast.style.padding = "15px 25px";
+        toast.style.borderRadius = "10px";
+        toast.style.boxShadow = "0 0 15px rgba(255,105,180,0.5)";
+        toast.style.zIndex = "9999";
+        toast.style.fontWeight = "bold";
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 4000);
+      });
+    });
+
+    // Joke carousel
+    const jokes = [
+      "Gay thief motto: steal wallets, not identities 💳",
+      "Harshit steals kisses faster than bikes 🚲💋",
+      "Reddit said 'Be yourself' — so he stole someone else’s boyfriend.",
+      "Closet? He stole the whole wardrobe instead 👗",
+      "Call him Robin Hood, but he only steals rich husbands 🏹",
+      "Wanted: not by cops, but by 4 guys on r/AskGayBros."
+    ];
+    let currentJokeIndex = 0;
+    const jokeContainer = document.getElementById("joke-container");
+    const prevBtn = document.getElementById("prev-joke");
+    const nextBtn = document.getElementById("next-joke");
+
+    function showJoke(index) {
+      jokeContainer.style.opacity = 0;
+      setTimeout(() => {
+        jokeContainer.textContent = jokes[index];
+        jokeContainer.style.opacity = 1;
+      }, 300);
+    }
+    prevBtn.addEventListener("click", () => {
+      currentJokeIndex = (currentJokeIndex - 1 + jokes.length) % jokes.length;
+      showJoke(currentJokeIndex);
+    });
+    nextBtn.addEventListener("click", () => {
+      currentJokeIndex = (currentJokeIndex + 1) % jokes.length;
+      showJoke(currentJokeIndex);
+    });
+    showJoke(currentJokeIndex);
+  </script>
+</body>
+</html>
