@@ -49,5 +49,18 @@ class MyStack{
     }
 }
 public class BasicStack {
+    public static void main(String[] args) {
+        MyStack stack = new MyStack();
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+        System.out.println("Stack elements:");
+        stack.display();
+        System.out.println("Top element: " + stack.peek());
+        System.out.println("Popped element: " + stack.pop());
+        System.out.println("Stack after pop:");
+        stack.display();
+        System.out.println("Is stack empty? " + stack.isEmpty());
+    }
     
 }
