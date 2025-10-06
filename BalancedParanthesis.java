@@ -25,4 +25,15 @@ public class BalancedParanthesis {
         }
         return stack.isEmpty();
     }
+    public static void main(String[] args) {
+        String str = "{[()]}";
+        if(isBalanced(str))
+        {
+            System.out.println("Balanced");
+        }
+        else
+        {
+            System.out.println("Not Balanced");
+        }
+    }
 }
