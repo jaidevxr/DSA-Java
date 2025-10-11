@@ -29,7 +29,11 @@ public class arrayListdemo {
         list.remove("banana");
         System.out.println(list);
         System.out.println(list.size());
+        for(String fruit : list) {
+            System.out.println(fruit);
+        }
         
+
 
     }    
     

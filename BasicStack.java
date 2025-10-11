@@ -61,6 +61,10 @@ public class BasicStack {
         System.out.println("Stack after pop:");
         stack.display();
         System.out.println("Is stack empty? " + stack.isEmpty());
+        
+        
+        
+
     }
     
 }
